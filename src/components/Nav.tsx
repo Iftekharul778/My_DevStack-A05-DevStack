@@ -4,11 +4,7 @@ import logoText from "../assets/logo-text.png";
 import hamburgerIcon from "../assets/hamburger.png";
 import xmarkIcon from "../assets/xmark.png";
 
-interface NavProps {
-  techCount?: number;
-}
-
-export default function Nav({ techCount }: NavProps) {
+export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

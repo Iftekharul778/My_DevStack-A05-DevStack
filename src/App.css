@@ -1,3 +1,7 @@
+:root {
+  --brand-gradient: linear-gradient(90deg, #F9542F, #D2168A, #8B2FE0);
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -60,7 +64,7 @@
 
 /* Figma-style Sign Up (Pill-shaped Magenta/Pink Button) */
 .btn-signup {
-  background: linear-gradient(135deg, #EC4899 0%, #D91B7E 100%); 
+  background: var(--brand-gradient);
   color: #FFFFFF; 
   border: none;
   padding: 0.6rem 1.4rem;
@@ -145,7 +149,7 @@
 }
 
 .banner-title .highlight {
-  background: linear-gradient(to right, #D91B7E, #8B5CF6);
+  background: var(--brand-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -164,7 +168,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(to right, #D91B7E, #8B5CF6);
+  background: var(--brand-gradient);
   color: #FFFFFF;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -256,6 +260,17 @@
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .tech-layout {
+    flex-direction: column;
+  }
+
+  .your-stack-panel {
+    width: 100%;
+    position: static;
+  }
 }
 
 .tech-cards-grid {
@@ -413,6 +428,62 @@
   border-radius: 8px;
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.stack-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.stack-item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.stack-item-category {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.stack-item-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.stack-item-remove:hover {
+  color: #ef4444;
+}
+
+.remove-all-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background: #ffffff;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.remove-all-btn:hover:not(:disabled) {
+  background-color: #fef2f2;
+}
+
+.remove-all-btn:disabled {
+  color: #cbd5e1;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
 }
 
 .stack-item-icon {
@@ -575,7 +646,7 @@
 }
 
 .logo-icon {
-  background: linear-gradient(135deg, #ec4899 0%, #d946ef 50%, #8b5cf6 100%);
+  background: var(--brand-gradient);
   color: #ffffff;
   font-weight: 800;
   font-size: 0.85rem;

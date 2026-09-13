@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface Technology {
   id: string;
@@ -34,9 +35,26 @@ export default function Technologies() {
   }, []);
 
   const handleAddToStack = (tech: Technology) => {
-    if (!myStack.some((item) => item.id === tech.id)) {
-      setMyStack([...myStack, tech]);
+    const alreadyAdded = myStack.some((item) => item.id === tech.id);
+
+    if (alreadyAdded) {
+      toast.warn(`${tech.name} is already in your stack.`);
+      return;
     }
+
+    setMyStack([...myStack, tech]);
+    toast.success(`${tech.name} added to your stack.`);
+  };
+
+  const handleRemove = (tech: Technology) => {
+    setMyStack((prev) => prev.filter((item) => item.id !== tech.id));
+    toast.info(`${tech.name} removed from your stack.`);
+  };
+
+  const handleRemoveAll = () => {
+    if (myStack.length === 0) return;
+    setMyStack([]);
+    toast.info('Your stack has been cleared.');
   };
 
   if (loading) {
@@ -78,7 +96,7 @@ export default function Technologies() {
                 onClick={() => handleAddToStack(tech)}
                 disabled={myStack.some(item => item.id === tech.id)}
               >
-                {myStack.some(item => item.id === tech.id) ? 'Added' : 'Add to Stack'}
+                {myStack.some(item => item.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}
               </button>
             </div>
           ))}
@@ -92,14 +110,36 @@ export default function Technologies() {
               <div className="empty-box">Your stack is empty.</div>
             </div>
           ) : (
-            <ul className="selected-stack-list">
-              {myStack.map((item) => (
-                <li key={item.id} className="selected-stack-item">
-                  <img src={item.icon} alt={item.name} className="stack-item-icon" />
-                  <span>{item.name}</span>
-                </li>
-              ))}
-            </ul>
+            <>
+              <ul className="selected-stack-list">
+                {myStack.map((item) => (
+                  <li key={item.id} className="selected-stack-item">
+                    <img src={item.icon} alt={item.name} className="stack-item-icon" />
+                    <div className="stack-item-info">
+                      <span className="stack-item-name">{item.name}</span>
+                      <span className="stack-item-category">{item.category}</span>
+                    </div>
+                    <button
+                      type="button"
+                      className="stack-item-remove"
+                      aria-label={`Remove ${item.name} from your stack`}
+                      onClick={() => handleRemove(item)}
+                    >
+                      ✕
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                type="button"
+                className="remove-all-btn"
+                onClick={handleRemoveAll}
+                disabled={myStack.length === 0}
+              >
+                Remove All
+              </button>
+            </>
           )}
         </div>
       </div>
