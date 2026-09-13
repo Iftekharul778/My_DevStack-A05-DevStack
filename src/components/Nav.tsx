@@ -21,9 +21,9 @@ export default function Nav({ techCount }: NavProps) {
       </button>
 
       <div className={`nav-center ${isOpen ? 'open' : ''}`}>
-        <a href="home">Home</a>
-        <a href="technologies">Technologies</a>
-        <a href="about">About</a>
+        <a href="">Home</a>
+        <a href="">Technologies</a>
+        <a href="">About</a>
       </div>
 
       <div className="nav-right">
