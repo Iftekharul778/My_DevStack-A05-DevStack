@@ -51,7 +51,7 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>{new Date().getFullYear()} @Iftekharul. All rights reserved.</p>
+                    <p>{new Date().getFullYear()} ©DevStack. All rights reserved.</p>
                     <div className="footer-bottom-links">
                         <a>Privacy</a>
                         <a>Terms</a>
