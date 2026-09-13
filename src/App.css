@@ -38,38 +38,43 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
+/* Figma-style Sign In (Plain text style) */
 .btn-signin {
   background: transparent;
-  color: #0F172A; 
-  border: 1px solid #E5E7EB; 
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  color: #475569; 
+  border: none; 
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s, color 0.2s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .btn-signin:hover {
-  background-color: #F3F4F6;
+  background-color: transparent;
   color: #0F172A;
 }
 
+/* Figma-style Sign Up (Pill-shaped Magenta/Pink Button) */
 .btn-signup {
-  background-color: #D91B7E; 
+  background: linear-gradient(135deg, #EC4899 0%, #D91B7E 100%); 
   color: #FFFFFF; 
-  border: 1px solid #D91B7E;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 9999px; /* Rounded pill shape */
   cursor: pointer;
-  font-weight: 500;
-  transition: opacity 0.2s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(217, 27, 126, 0.25);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .btn-signup:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  transform: translateY(-1px);
 }
 
 .badge {
@@ -81,7 +86,6 @@
   border: 1px solid #D91B7E;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .hamburger-btn {
     display: block;
