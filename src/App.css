@@ -217,3 +217,201 @@
 }
 
 
+/* ===== Technologies Section ====== */
+
+.tech-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.tech-header {
+  margin-bottom: 2.5rem;
+}
+
+.tech-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.tech-title .highlight {
+  color: #d946ef;
+}
+
+.tech-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.tech-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.tech-cards-grid {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tech-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease;
+}
+
+.tech-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tech-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tech-card-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.tech-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.tech-card-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.tech-card-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.tech-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background-color: #f8fafc;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.tech-rating {
+  margin-left: auto;
+  color: #eab308;
+  font-weight: 600;
+}
+
+.add-to-stack-btn {
+  width: 100%;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-stack-btn:hover {
+  background-color: #1e293b;
+}
+
+.add-to-stack-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.your-stack-panel {
+  flex: 1;
+  min-width: 240px;
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 2rem;
+}
+
+.stack-panel-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.empty-stack p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.empty-box {
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.selected-stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selected-stack-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.stack-item-icon {
+  width: 20px;
+  height: 20px;
+}
